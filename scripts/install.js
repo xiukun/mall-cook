@@ -17,9 +17,9 @@ let PKG_SERVICE = resolve(CWD, './packages/mall-cook-service')
 let PKG_PLATFORM_ELECTRON = resolve(CWD, './packages/mall-cook-platform-electron')
 
 const installPlatform = () => execa('yarn', ['install'], { cwd: PKG_PLATFORM })
-const installTemplate = () => execa('yarn', ['install'], { cwd: PKG_TEMPLATE })
-const installService = () => execa('yarn', ['install'], { cwd: PKG_SERVICE })
-const installPlatformElectron = () => execa('yarn', ['install'], { cwd: PKG_PLATFORM_ELECTRON })
+const installTemplate = () => execa('npm', ['install'], { cwd: PKG_TEMPLATE })
+const installService = () => execa('npm', ['install'], { cwd: PKG_SERVICE })
+const installPlatformElectron = () => execa('npm', ['install'], { cwd: PKG_PLATFORM_ELECTRON })
 
 async function runTask (taskName, task) {
   const s = ora().start(`${taskName}平台 开始下载依赖 `)
